@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Dolphin Explorer by konvio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Dolphin Explorer</h1>
+      <h2 class="project-tagline">A full-fledged file manager with advanced features</h2>
+      <a href="https://github.com/konvio/javafx-file-manager" class="btn">View on GitHub</a>
+      <a href="https://github.com/konvio/javafx-file-manager/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/konvio/javafx-file-manager/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="file-manager" class="anchor" href="#file-manager" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>File Manager</h1>
+
+<h2>
+<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h2>
+
+<p>File Manager supports all basic file operations.
+Main window contains two panes in order to copy and move selected items between them.
+Advanced operations are available via text fields above panes.</p>
+
+<h2>
+<a id="main-window" class="anchor" href="#main-window" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Main window</h2>
+
+<p><img src="http://i.imgur.com/zFbYK3s.png" alt="main_window">
+Main window contains two panes with corresponding text fields.
+Every text field shows current path and can be used to enter advanced quick commands. </p>
+
+<h2>
+<a id="file-operations" class="anchor" href="#file-operations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>File operations</h2>
+
+<ul>
+<li><p>Create new directory</p></li>
+<li><p>Create new file</p></li>
+<li><p>Rename selected item</p></li>
+<li><p>Delete selected items</p></li>
+<li><p>Copy selected items to directory on other pane</p></li>
+<li><p>Move selected items to directory on other pane</p></li>
+</ul>
+
+<p><img src="http://i.imgur.com/32OzK40.png" alt="file_operations"></p>
+
+<h2>
+<a id="advanced-operations" class="anchor" href="#advanced-operations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advanced operations</h2>
+
+<p>Advanced commands are entered to text fields and are applied to corresponding pane.
+<strong><em>&lt; command&gt; ::= &lt; keyword&gt; &lt; argument&gt;</em></strong><br>
+<strong><em>&lt; argument&gt; ::= &lt; regex&gt; | &lt; word to find&gt;</em></strong><br>
+For example, command <strong><em>copy .*mus.*</em></strong> copies all files that contains <em>mus</em>.</p>
+
+<p><img src="http://i.imgur.com/8IOO58d.png" alt="delete_demo"></p>
+
+<h5>
+<a id="select" class="anchor" href="#select" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SELECT</h5>
+
+<p>Select all elements that matches regex or contains entered word . 
+After selection it is possible to perform other actions.</p>
+
+<h5>
+<a id="move" class="anchor" href="#move" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MOVE</h5>
+
+<p>Apply <em>SELECT</em> with <em>moving</em>.</p>
+
+<h5>
+<a id="copy" class="anchor" href="#copy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>COPY</h5>
+
+<p>Apply <em>SELECT</em> with <em>copying</em>.</p>
+
+<h5>
+<a id="delete" class="anchor" href="#delete" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DELETE</h5>
+
+<p>Apply <em>SELECT</em> with <em>deletion</em>.</p>
+
+<h5>
+<a id="open" class="anchor" href="#open" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OPEN</h5>
+
+<p>Apply <em>SELECT</em> with opening all selected items with associated programs.</p>
+
+<h2>
+<a id="html-editor" class="anchor" href="#html-editor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>HTML editor</h2>
+
+<p>To open HTML files with build-in editor just press <em>F3</em> with selected file.</p>
+
+<p><img src="http://i.imgur.com/hYbQ05i.png" alt="html_editor"></p>
+
+<h2>
+<a id="words-count" class="anchor" href="#words-count" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Words count</h2>
+
+<p>To count words in selected .txt file, just press button <em>Count words</em>. New txt file file counted words will
+appear in the same directory.</p>
+
+<p><img src="http://i.imgur.com/EYtPArz.png" alt="words_count"></p>
+
+<h2>
+<a id="observing-directory-changes" class="anchor" href="#observing-directory-changes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Observing directory changes</h2>
+
+<p>Background thread is used to watch active directories changes. Java Path API is used to do so in effective
+ way instead of just pulling directory for changes every time interval.</p>
+
+<h2>
+<a id="hotkeys" class="anchor" href="#hotkeys" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Hotkeys</h2>
+
+<p>F3 - open with HTML editor<br>
+F5 - copy<br>
+F6 - move<br>
+Delete - delete<br>
+CTRL + N - new file<br>
+CTRL + SHIFT + N - new directory<br>
+SHIFT + D - focus corresponding text field</p>
+
+<h6>
+<a id="copyright--2016-by-vitaliy-kononenko-k-24" class="anchor" href="#copyright--2016-by-vitaliy-kononenko-k-24" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Copyright © 2016 by Vitaliy Kononenko, K-24</h6>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/konvio/javafx-file-manager">Dolphin Explorer</a> is maintained by <a href="https://github.com/konvio">konvio</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
